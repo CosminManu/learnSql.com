@@ -1,0 +1,25 @@
+ - What is a database?
+put it simply, it s a computer program which stores various data
+DB vendors : Oracle, MySQL, PostgreSQL, SQL Server etc etc
+
+they can be found everywhere
+
+- Relational databases
+stores information in tables - many tables in 1 database, each table holds data
+database <= tables <= data
+
+E.g. university (database) <= student (table) <= grades (data)
+
+tables have : columns, rows - each row stores information about 1 object
+Below, each ROW stores info about exactly 1 student
+
+id	name	year_born	graduation_year
+1	Kyle Lawson	1992	2015
+2	Santiago Knox	1991	2015
+3	Arian Sheppard	1990	2013
+4	Samuel Foster	1991	2014
+5	Hayden Smith	1986	2010
+
+
+- SQL = standard query language
+language to interact with the db; queries = instructions to find out information about the data stored in the db
