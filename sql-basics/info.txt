@@ -23,3 +23,7 @@ id	name	year_born	graduation_year
 
 - SQL = standard query language
 language to interact with the db; queries = instructions to find out information about the data stored in the db
+
+
+----- Chapter 4 aggregating and grouping -----------
+This ascending order of results is performed in SQL by default.
