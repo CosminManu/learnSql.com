@@ -70,3 +70,28 @@ WHERE year = 2011
 ORDER by salary
 
 
+--Select all rows from the table employees and sort them in the descending order by the column last_name
+select * from employees
+order by last_name desc
+
+--Select all rows from the table employees and sort them in the ascending order by the department and then in the descending order by the salary.
+select * from employees
+order by department ASC, salary DESC
+
+
+--Select the column year from the table employees in such a way that each year is only shown once.
+select distinct year from employees
+
+
+select distinct department, position from employees
+order by department desc
+
+
+
+
+
+
+
+
+
+
