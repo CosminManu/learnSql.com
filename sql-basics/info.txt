@@ -29,3 +29,6 @@ language to interact with the db; queries = instructions to find out information
 This ascending order of results is performed in SQL by default.
 
 distinct  = remove duplicates
+
+COUNT() calculates the number of rows specified in the parentheses
+count(*) = count all rows

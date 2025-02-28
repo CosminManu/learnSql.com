@@ -86,8 +86,11 @@ select distinct year from employees
 select distinct department, position from employees
 order by department desc
 
+--count all rows from table
+select count(*) from employees
 
-
+--Check how many non-NULL values in the column position there are in the table employees. Name the column non_null_no.
+select count(position) as non_null_no from employees
 
 
 
