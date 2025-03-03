@@ -106,8 +106,15 @@ select avg(salary) from employees where year = 2013
 select sum(salary) from employees where department = 'Marketing' and year = 2014
 
 
+--Find the number of employees in each department in the year 2013. Show the department name together with the number of employees.
+select department, count(*) as employees_no from employees 
+where year = 2013
+group by department
 
-
+--Show all departments together with their lowest and highest salary in 2014.
+select department, max(salary), min(salary) from employees
+where year = 2014
+group by department
 
 
 

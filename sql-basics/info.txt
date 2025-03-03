@@ -38,3 +38,57 @@ max(_column_name_) = highest value
 min(_column_name_)
 
 avg() = returns average
+
+
+
+GROUP BY will group together all rows having the same value in the specified column (eg all orders made by the same client will be grouped in 1 row)
+
+SELECT
+  customer_id,
+  COUNT(*)
+FROM orders
+GROUP BY customer_id;
+
+order_id	customer_id	order_date	ship_date	total_sum		customer_id	COUNT(*)
+1		1		2014-02-21	2014-02-22	1009.00			1		3 ( ca apare de 3 ori customer_id 1 )
+2		1		2014-02-25	2014-02-25	2100.00	
+3		1		2014-03-03	2014-03-03	315.00	
+4		2		2014-03-03	2014-03-04	401.67			2		2 ( ca apare de 2 ori customer_id 2 )
+5		2		2014-03-03	2014-03-07	329.29	
+6		3		2014-03-15	2014-03-15	25349.68		3		1 ( ca apare 1 data customer_id 3 )
+
+
+
+
+Group by more columns
+SELECT
+  customer_id,
+  order_date,
+  SUM(total_sum)
+FROM orders
+GROUP BY customer_id, order_date;
+
+!!! Each column in the SELECT part must either be used later for grouping or it must be used with one of the functions
+
+order_id	customer_id	order_date	ship_date	total_sum	customer_id	order_date	SUM(total_sum)
+16		6		2015-03-28	2015-03-29	230.54		6	2015-03-28	2906.19
+17		6		2015-03-28	2015-03-30	321.42	
+18		6		2015-03-28	2015-03-30	2354.23	
+							total	2800-2900
+
+19		6		2015-03-29	2015-03-30	4224.21		6	2015-03-29	10788.06
+20		6		2015-03-29	2015-03-30	2314.32	
+21		6		2015-03-29	2015-03-31	124.21	
+22		6		2015-03-29	2015-03-31	4125.32	
+							total   10mii
+
+23		6		2015-03-30	2015-04-03	645.23	   →	6	2015-03-30	10504.42
+24		6		2015-03-30	2015-04-05	7543.56	
+25		6		2015-03-30	2015-04-05	2315.63	
+
+
+26		7		2015-04-02	2015-04-05	523.98		7	2015-04-02	9580.42
+27		7		2015-04-02	2015-04-06	523.13	
+28		7		2015-04-02	2015-04-07	8533.31	
+29		7		2015-04-03	2015-04-07	4245.64		7	2015-04-03	4245.64
+
