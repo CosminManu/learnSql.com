@@ -92,6 +92,19 @@ select count(*) from employees
 --Check how many non-NULL values in the column position there are in the table employees. Name the column non_null_no.
 select count(position) as non_null_no from employees
 
+--Count how many different positions there are in the table employees. Name the column distinct_positions
+select count(distinct position) as distinct_position
+from employees
+
+--Select the highest salary from the table employees
+select max(salary) from employees
+
+--Find the average salary in the table employees for the year 2013.
+select avg(salary) from employees where year = 2013
+
+-- sum of all salaries in the Marketing department in 2014
+select sum(salary) from employees where department = 'Marketing' and year = 2014
+
 
 
 

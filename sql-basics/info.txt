@@ -32,3 +32,9 @@ distinct  = remove duplicates
 
 COUNT() calculates the number of rows specified in the parentheses
 count(*) = count all rows
+count(distinct _column_name_) = count all rows which have a distinctive value
+
+max(_column_name_) = highest value
+min(_column_name_)
+
+avg() = returns average
