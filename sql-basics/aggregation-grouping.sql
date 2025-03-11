@@ -116,5 +116,45 @@ select department, max(salary), min(salary) from employees
 where year = 2014
 group by department
 
+--For each department find the average salary in 2015
+select department, avg(salary) from employees
+where year = 2015
+group by department
+
+
+--Find the average salary for each employee. Show the last name, the first name, and the average salary. Group the table by the last name and the first name.
+select first_name, last_name, avg(salary)
+from employees
+group by last_name, first_name
+
+--Find such employees who (have) spent more than 2 years in the company. Select their last name and first name together with the number of years worked (name this column years)
+SELECT last_name, first_name, count(distinct year) as years
+from employees
+GROUP by last_name, first_name
+HAVING count(distinct year) > 2
+
+
+--Find such departments where the average salary in 2012 was higher than $3,000. Show the department name with the average salary.
+SELECT department, avg(salary) from employees
+where year = 2012 group by department
+having avg(salary) > 3000
+
+--Sort the employees according to their summary salaries. Highest values should appear first. Show the last name, the first name, and the sum.
+select last_name, first_name, sum(salary)
+from employees
+group by last_name, first_name
+ORDER by sum(salary) desc
+
+/*
+Show the columns last_name and first_name from the table employees together with each person's average salary and the number of years they (have) worked in the company.
+Use the following aliases: average_salary for each person's average salary and years_worked for the number of years worked in the company. Show only such employees who (have) spent more than 2 years in the company. Order the results according to the average salary in the descending order
+*/
+select last_name, first_name, avg(salary) as average_salary, count(distinct year) as years_worked 
+from employees
+group by last_name, first_name
+having years_worked > 2
+order by avg(salary) desc
+
+
 
 
